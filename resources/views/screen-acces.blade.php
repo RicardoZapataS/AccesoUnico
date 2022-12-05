@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
-{{--    <meta http-equiv="refresh" content="1" >--}}
+    <meta http-equiv="refresh" content="1" >
     <style>
         #relojeador{
             background-color : Black;
