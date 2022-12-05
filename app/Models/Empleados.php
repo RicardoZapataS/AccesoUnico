@@ -56,4 +56,7 @@ class Empleados extends Model
         ,'NroFactura'
         ,'CodigoTarjeta'
     ];
+    public function Empresa(){
+        return $this->belongsTo(Empresas::class, 'Empresa', 'Empresa');
+    }
 }

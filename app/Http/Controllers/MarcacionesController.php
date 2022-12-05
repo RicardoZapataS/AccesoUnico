@@ -16,12 +16,52 @@ class MarcacionesController extends Controller
      */
     public function index($id)
     {
-        $lecturas = Marcaciones::where('punto_accesos_id', $id)->take(100)->get();
+        $lecturas = Marcaciones::where('punto_accesos_id', $id)->orderBy('id', 'DESC')->take(10)->get();
 
         $t = Marcaciones::where('punto_accesos_id', $id)->orderBy('id', 'DESC')->get()->first();
         $last_person = Empleados::where('CodigoTarjeta', $t->codigo_tarjeta)->get()->first();
-        //dd($last_person->Fotografia);
-        return view('screen-acces', compact('lecturas', 'last_person'));
+        $punto = PuntoAcceso::find($id);
+        $mes = "";
+        switch (substr($last_person->Vencimiento, 5, 2)){
+            case "01":
+                $mes = "ENE";
+                break;
+            case "02":
+                $mes = "FEB";
+                break;
+            case "03":
+                $mes = "MAR";
+                break;
+            case "04":
+                $mes = "ABR";
+                break;
+            case "05":
+                $mes = "MAY";
+                break;
+            case "06":
+                $mes = "JUN";
+                break;
+            case "07":
+                $mes = "JUL";
+                break;
+            case "08":
+                $mes = "AGO";
+                break;
+            case "09":
+                $mes = "SEP";
+                break;
+            case "10":
+                $mes = "OCT";
+                break;
+            case "11":
+                $mes = "NOV";
+                break;
+            case "12":
+                $mes = "DEC";
+                break;
+        }
+        //dd($last_person->empleado);
+        return view('screen-acces', compact('lecturas', 'last_person', 'punto', 'mes'));
     }
 
     /**
