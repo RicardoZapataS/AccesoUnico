@@ -21,9 +21,9 @@ class Marcaciones extends Model
         'punto_accesos_id',
     ];
 
-    protected  $dispatchesEvents = [
-      'created' => MarcacionEvent::class,
-    ];
+//    protected  $dispatchesEvents = [
+//      'created' => MarcacionEvent::class,
+//    ];
     public function Empleado(){
         return $this->belongsTo(Empleados::class,'codigo', 'Codigo');
     }

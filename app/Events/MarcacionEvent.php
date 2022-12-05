@@ -32,12 +32,12 @@ class MarcacionEvent implements ShouldBroadcast
      *
      * @return \Illuminate\Broadcasting\Channel|array
      */
-    public function broadcastOn()
-    {
-        return new Channel('marcaciones.created');
-    }
+//    public function broadcastOn()
+//    {
+//        return new Channel('marcaciones.created');
+//    }
 
-    public function broadcastAs(): string{
-        return 'marcaciones.created';
-    }
+//    public function broadcastAs(): string{
+//        return 'marcaciones.created';
+//    }
 }
