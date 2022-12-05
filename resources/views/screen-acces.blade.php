@@ -87,7 +87,6 @@
                     <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">CODIGO</th>
                         <th scope="col">NOMBRE</th>
                         <th scope="col">EMPRESA</th>
                         <th scope="col">ESTADO</th>
@@ -98,11 +97,10 @@
                     @foreach($lecturas as $lectura)
                         <tr>
                             <th scope="row">{{ $lectura->id }}</th>
-                            <td>{{ $lectura->codigo }}</td>
                             <td>{{ $lectura->empleado->Nombre }}</td>
                             <td>{{ substr($lectura->empleado->empresa->NombEmpresa, 0, 15) }}.</td>
                             <td>@if($lectura->permitido == 1 ) Permitido @else No permitido @endif</td>
-                            <td>{{ substr($lectura->created_at, 0, 10) }}</td>
+                            <td>{{ $lectura->created_at }}</td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -132,7 +130,7 @@
                             <span style=" text-align: center;  display: block; font-size: 1.1rem; font-weight: bolder; font-family: 'Nunito', sans-serif; color: #d3192d">{{ $mes }} <br> </span>
                             <span style=" text-align: center;  display: block; font-size: .9rem; font-weight: bolder; ">{{ $last_person->Codigo }} - VVI <br> </span>
                         </div>
-                        <div style="position: absolute; bottom: 2.8rem; left: 2rem;">
+                        <div style="position: absolute; bottom: 1.8rem; left: 2rem;">
                             <span style="display: block; font-weight: 900; font-size: .8rem">{{ $last_person->CI }}</span>
                         </div>
                         <img style="width: 100%" src="{{ asset('assets/img/local/local.jpg') }}" alt="">
